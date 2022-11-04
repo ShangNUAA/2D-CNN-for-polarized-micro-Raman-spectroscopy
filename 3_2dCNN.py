@@ -185,8 +185,6 @@ for split_name in  split_list:
             val_outputs = net(val_inputs)#输入val_inputs到神经网络，得到val_outputs
             val_labels = val_labels.cuda()#（可选）将标签导入gpu
             val_loss = criterion(val_outputs, val_labels)#计算损失函数
-            #val_loss.backward()#损失函数反向传递
-            #optimizer.step()#对网络参数进行优化
    
             val_outputs = output_renumber(val_outputs)
             val_outputs = val_outputs.cuda()     
@@ -199,8 +197,6 @@ for split_name in  split_list:
             test_outputs = net(test_inputs)#输入val_inputs到神经网络，得到val_outputs
             test_labels = test_labels.cuda()#（可选）将标签导入gpu
             test_loss = criterion(test_outputs, test_labels)#计算损失函数
-            #test_loss.backward()#损失函数反向传递
-            #optimizer.step()#对网络参数进行优化
    
             test_outputs = output_renumber(test_outputs)
             test_outputs = test_outputs.cuda()     
